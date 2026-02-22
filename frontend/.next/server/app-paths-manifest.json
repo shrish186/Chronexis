@@ -1,0 +1,4 @@
+{
+  "/page": "app/page.js",
+  "/results/[simRunId]/page": "app/results/[simRunId]/page.js"
+}
