@@ -22,10 +22,10 @@ For each simulation run, Chronexis reports:
 
 ## How it works
 
-1. **Define** a venture and its execution model (/api/venture).
-2. **Simulate** — the engine runs a configurable number of Monte Carlo trials (default 800, capped 100–2,000). Each run uses a seeded RNG, so results are fully reproducible (/api/simulate).
+1. **Define** a venture and its execution model.
+2. **Simulate** — the engine runs a configurable number of Monte Carlo trials (default 800, capped 100–2,000). Each run uses a seeded RNG, so results are fully reproducible.
 3. **Analyze** — aggregated probabilities and percentiles are sent to Gemini, which generates human-readable risk insights.
-4. **Persist** — every run is stored in MongoDB and retrievable later (/api/results).
+4. **Persist** — every run is stored in MongoDB and retrievable later.
 5. **Visualize** — the Next.js dashboard renders probability distributions and runway projections with Recharts.
 
 ## Tech stack
@@ -36,21 +36,6 @@ For each simulation run, Chronexis reports:
 | **Backend** | Node.js, Express, TypeScript |
 | **Database** | MongoDB |
 | **AI** | Google Gemini API |
-
-## API
-
-| Method | Endpoint | Purpose |
-|---|---|---|
-| GET | /health | Health check |
-| POST | /api/venture | Create / manage a venture and its model |
-| POST | /api/simulate | Run a Monte Carlo simulation and generate insights |
-| GET | /api/results | Retrieve stored simulation runs |
-
-## Running locally
-
-Backend: cd backend && npm install && npm run dev (needs a .env with MONGODB_URI, GEMINI_API_KEY, FRONTEND_URL; runs on :4000)
-
-Frontend: cd frontend && npm install && npm run dev (runs on :3000)
 
 ## Team
 
